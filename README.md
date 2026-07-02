@@ -1,3 +1,6 @@
+# Purpose
+This sample code is used to demonstrate the the use of routerLink's and programatic routing passing parameters. Is looks at using a snapshot of the activated route for a one time use of the parameter and also using an observable to manage the changes in the router parameters over time.
+
 # Demo
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.3.
@@ -12,19 +15,7 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
 
 ## Building
 

@@ -1,12 +1,31 @@
 <div class="row">
     <div class="col-sm-9 col-md-7 collg-5 mx-auto">
 
-        <div class="card card-signin my-5">
+        <div class="card border-primary my-5">
             <div class="card-body">
-                <h3>Login Component</h3>
+                <h3 class="card-title">Login Component</h3>
                 <h1>User ID: {{userid}}</h1>
                 <p>Component Loaded {{count}} times</p>
                 <p>Users Displayed: {{usernum}} Times</p>
+        @if(logindemo){
+            <div class="login-container">
+                <h2>Login</h2>
+                <form id="loginForm" method="post">
+
+                    <label for="email">Email Address</label>
+                    <input type="text" name="email" id="email" [(ngModel)]="email">
+                    <label for="pwd">Password</label>
+                    <input type="password" name="pwd" id="pwd" [(ngModel)]="pwd">
+                    <button class="btn btn-primary" id="formsubmit" type="button" (click)="btnSubmit()">Submit</button>
+                    
+                </form>
+                <div id="messages"
+                [class.show]="message()";
+                [class.success]="messageType ==='success'";
+                [class.fail]="messageType ==='fail'";
+                >{{message()}}</div>
             </div>
+        }
         </div>
     </div>
+</div>

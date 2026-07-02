@@ -1,0 +1,78 @@
+:host{
+    
+    --success:#11ad0c44;
+    --fail:#55000044;
+    --container-width:500px;
+}
+/* Login container */
+.login-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: calc(var(--container-width)/30);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* width: var(--container-width); */
+
+    & h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    & label{
+        display:inline-block;
+        padding-bottom:1rem;
+    }
+    & input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+}
+    #messages{
+        padding:0.5rem;
+        margin-top:0.5rem;
+        border-radius:0.3rem;
+        background-color:transparent;
+        opacity:0;
+        transition: opacity 1s ease; 
+        &.show{
+            opacity:1;
+        }
+       
+        &.success{
+            
+            background-color:var(--success);
+           
+        }
+        &.fail{
+           
+            background-color:var(--fail);
+          
+        }
+    }
+    
+
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  /* Fade in during first second */
+  16.7% {
+    opacity: 1;
+  }
+
+  /* Stay visible for ~4 seconds */
+  83.3% {
+    opacity: 1;
+  }
+
+  /* Fade out during last second */
+  100% {
+    opacity: 0;
+  }
+}
+
+   

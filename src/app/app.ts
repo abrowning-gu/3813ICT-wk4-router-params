@@ -1,4 +1,4 @@
-import { Component, signal,inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet,RouterLink,Router } from '@angular/router';
 import {Nav} from './comp/nav/nav';
 
@@ -9,7 +9,7 @@ import {Nav} from './comp/nav/nav';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('demo');
+  
   private router = inject(Router);
   navbyurl(id:number){
     this.router.navigateByUrl('/login/' + id);

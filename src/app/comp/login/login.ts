@@ -21,7 +21,7 @@ export class Login implements OnInit{
   auth = inject(Auth);
   email:string="";
   pwd:string = "";
-  userid:string  = "";
+  userid:string|null="";
   usernum:number = 0;
   count:number = 0;
   sub:Subscription = new Subscription();
@@ -34,16 +34,16 @@ export class Login implements OnInit{
    
     this.count = this.counter.incrementCounter();
     //get the userid when the component loads.
-    // this.userid = this.route.snapshot.params['id'];
+    this.userid = this.route.snapshot.paramMap.get('id');
 
     //use a subscription to continue to monitor changes in the user id parameter.
-    this.sub = this.route.paramMap
-    .subscribe(params=>{
-      this.userid = params.get('id') ?? '';
-      this.usernum = this.counter.incrementUsercounter();
-      this.email = "";
-      this.pwd = "";
-    });
+    // this.sub = this.route.paramMap
+    // .subscribe(params=>{
+    //   this.userid = params.get('id') ?? '';
+    //   this.usernum = this.counter.incrementUsercounter();
+    //   this.email = "";
+    //   this.pwd = "";
+    // });
   }
 
   ngOnDestroy(){

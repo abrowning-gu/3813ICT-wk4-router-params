@@ -31,10 +31,12 @@ export class Login implements OnInit{
  
 
   ngOnInit(){
-   // this.userid = this.route.snapshot.params['id'];
+   
     this.count = this.counter.incrementCounter();
+    //get the userid when the component loads.
+    // this.userid = this.route.snapshot.params['id'];
 
-
+    //use a subscription to continue to monitor changes in the user id parameter.
     this.sub = this.route.paramMap
     .subscribe(params=>{
       this.userid = params.get('id') ?? '';
@@ -50,7 +52,10 @@ export class Login implements OnInit{
     }
 
   }
+
+  //Event handler for form submit
   btnSubmit(){
+    //call login function from Auth service.
     this.auth.login(
       { 
         email: this.email,
@@ -61,10 +66,11 @@ export class Login implements OnInit{
         next:(response:LoginResponse)=>{
          
           this.message.set(response.message);
-          console.log(this.message());
+        
           if(response.valid == true){
              this.messageType = 'success';
-             
+            
+             //hide message after 3 seconds
             setTimeout(() => {
                 this.message.set("") ;
                 this.messageType = null;
@@ -73,6 +79,7 @@ export class Login implements OnInit{
          
           }else{
             this.messageType = 'fail';
+            //hide message after 3 seconds
             setTimeout(() => {
                 this.message.set("") ;
                 this.messageType = null;

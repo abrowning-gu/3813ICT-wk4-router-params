@@ -1,5 +1,9 @@
-# Purpose
+# Overview
 This sample code is used to demonstrate the the use of routerLink's and programatic routing passing parameters. Is looks at using a snapshot of the activated route for a one time use of the parameter and also using an observable to manage the changes in the router parameters over time.
+
+Clone the front end repo as well as the backend (Server). I have a driectory for the project and inside that I have a "demo" directory containing the front end angular code and a "server" directory containing the node/express code.
+
+Once you have cloned the repo remember to run  *>npm install* to download the required dependencies for each repo.
 
 # Demo
 
@@ -10,7 +14,8 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To start a local development server, run:
 
 ```bash
-ng serve
+ng serve    or
+npm start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
